@@ -4,23 +4,152 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #FF5D09;
+  --ifm-color-primary-dark: #d94e00;
+  --ifm-color-primary-light: #fff7f2;
+  --ifm-background-color: #fff;
+  --ifm-navbar-background-color: #fff;
+  --ifm-footer-background-color: #fff;
+  --ifm-font-color-base: #222;
+}
+
+body {
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--ifm-navbar-background-color) !important;
+  border-bottom: none;
+}
+
+/* Footer */
+.footer {
+  background: var(--ifm-footer-background-color) !important;
+  color: var(--ifm-color-primary-dark);
+  border-top: 2px solid var(--ifm-color-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: var(--ifm-color-primary);
+  transition: color 0.2s;
+}
+
+/* 正文内容为黑色，覆盖默认样式 */
+.theme-doc-markdown p,
+.theme-doc-markdown li,
+.theme-doc-markdown ul,
+.theme-doc-markdown ol,
+.theme-doc-markdown table,
+.theme-doc-markdown td,
+.theme-doc-markdown th {
+  color: #111;
+}
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Buttons */
+.button, .button--primary, .button--secondary, .button--outline, .button--link {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(229,57,53,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.button:hover, .button--primary:hover, .button--secondary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+}
+
+/* Card/Box */
+.card, .theme-doc-markdown, .theme-doc-sidebar-container {
+  background: #fff;
+  border: 1px solid #fff7f2;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(255,93,9,0.04);
+}
+
+/* 去除正文下方圆角图层和正文圆角 */
+/* .theme-doc-markdown {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+} */
+.theme-doc-markdown {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 1200px; /* 增大最大宽度 */
+  margin: 0 auto; /* 水平居中 */
+  padding: 0 40px; /* 调整左右内边距 */
+  font-size: 16px; /* 减小正文内容字号 */
+}
+
+.theme-doc-markdown h1{
+  font-size: 1.8em; /* 根据需要调整标题字号 */
+} .theme-doc-markdown h2, .theme-doc-markdown h3, .theme-doc-markdown h4, .theme-doc-markdown h5, .theme-doc-markdown h6 {
+  font-size: 1.2em; /* 根据需要调整标题字号 */
+}
+
+/* 去除左侧导航与正文之间的细线 */
+.theme-doc-sidebar-container {
+  border-right: none !important;
+}
+
+/* Code blocks */
+pre, code {
+  background: #fff7f2 !important;
+  color: #d94e00 !important;
+}
+
+/* Selection */
+::selection {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+/* Table */
+table {
+  border: 1px solid #fff7f2;
+  border-radius: 6px;
+  overflow: hidden;
+}
+th {
+  background: #fff7f2;
+  color: #d94e00;
+}
+td {
+  background: #fff;
+}
+
+/* Misc */
+.alert--primary {
+  background: #fff7f2;
+  color: #d94e00;
+  border-color: #FF5D09;
+}
+/* :root {
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+} */
 .hidden {
   display: none;
 }
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+/* [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -29,4 +158,4 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
+} */
